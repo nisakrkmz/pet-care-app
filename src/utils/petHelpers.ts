@@ -22,37 +22,36 @@ export const ruhHaliDetayGetir = (ruh: RuhHali): { emoji: string; renk: string }
 };
 
 export const hayvanGorseliGetir = (tur: HayvanTuru, ruh: RuhHali, seviye: number = 1): string => {
-  // Her hayvan türü için seviye bazında evrim sistemi
   const seviyeEmojileri: Record<number, Record<HayvanTuru, Record<string, string>>> = {
     1: { // Baby
       'kedi': { 'Cok Mutlu': '🐱', 'Halsiz': '😿', 'Yorgun': '😴', 'Uzgun': '😿', 'default': '🐱' },
       'kopek': { 'Cok Mutlu': '🐕', 'Halsiz': '🐕', 'Yorgun': '😴', 'Uzgun': '🐕', 'default': '🐕' },
       'tavsan': { 'Cok Mutlu': '🐰', 'Halsiz': '🐰', 'Yorgun': '😴', 'Uzgun': '🐰', 'default': '🐰' },
-      'ejderha': { 'Cok Mutlu': '🐦', 'Halsiz': '🐦', 'Yorgun': '😴', 'Uzgun': '🐦', 'default': '🐦' }
+      'ejderha': { 'Cok Mutlu': '🐦‍⬛', 'Halsiz': '🐦‍⬛', 'Yorgun': '😴', 'Uzgun': '🐦‍⬛', 'default': '🐦‍⬛' }
     },
     5: { // Young
       'kedi': { 'Cok Mutlu': '😸', 'Halsiz': '😺', 'Yorgun': '😸', 'Uzgun': '😺', 'default': '😺' },
       'kopek': { 'Cok Mutlu': '🐕', 'Halsiz': '🐕', 'Yorgun': '🐕', 'Uzgun': '🐕', 'default': '🐕' },
       'tavsan': { 'Cok Mutlu': '🐰', 'Halsiz': '🐰', 'Yorgun': '🐰', 'Uzgun': '🐰', 'default': '🐰' },
-      'ejderha': { 'Cok Mutlu': '🐦', 'Halsiz': '🐦', 'Yorgun': '🐦', 'Uzgun': '🐦', 'default': '🐦' }
+      'ejderha': { 'Cok Mutlu': '🐦‍⬛', 'Halsiz': '🐦‍⬛', 'Yorgun': '🐦‍⬛', 'Uzgun': '🐦‍⬛', 'default': '🐦‍⬛' }
     },
     10: { // Adult
       'kedi': { 'Cok Mutlu': '😻', 'Halsiz': '😸', 'Yorgun': '😺', 'Uzgun': '😺', 'default': '😻' },
       'kopek': { 'Cok Mutlu': '🐕', 'Halsiz': '🐕', 'Yorgun': '🐕', 'Uzgun': '🐕', 'default': '🐕' },
       'tavsan': { 'Cok Mutlu': '🐰', 'Halsiz': '🐰', 'Yorgun': '🐰', 'Uzgun': '🐰', 'default': '🐰' },
-      'ejderha': { 'Cok Mutlu': '🐦', 'Halsiz': '🐦', 'Yorgun': '🐦', 'Uzgun': '🐦', 'default': '🐦' }
+      'ejderha': { 'Cok Mutlu': '🐦‍⬛', 'Halsiz': '🐦‍⬛', 'Yorgun': '🐦‍⬛', 'Uzgun': '🐦‍⬛', 'default': '🐦‍⬛' }
     },
     15: { // Epic
       'kedi': { 'Cok Mutlu': '🦁', 'Halsiz': '🐯', 'Yorgun': '🦁', 'Uzgun': '🐯', 'default': '🦁' },
       'kopek': { 'Cok Mutlu': '🐺', 'Halsiz': '🐺', 'Yorgun': '🐺', 'Uzgun': '🐺', 'default': '🐺' },
       'tavsan': { 'Cok Mutlu': '🦌', 'Halsiz': '🦌', 'Yorgun': '🦌', 'Uzgun': '🦌', 'default': '🐰' },
-      'ejderha': { 'Cok Mutlu': '🦢', 'Halsiz': '🦢', 'Yorgun': '🦢', 'Uzgun': '🦢', 'default': '🦢' }
+      'ejderha': { 'Cok Mutlu': '🦉', 'Halsiz': '🦉', 'Yorgun': '🦉', 'Uzgun': '🦉', 'default': '🦉' }
     },
     20: { // Legendary
       'kedi': { 'Cok Mutlu': '🐉', 'Halsiz': '🦄', 'Yorgun': '🐉', 'Uzgun': '🐉', 'default': '🐉' },
       'kopek': { 'Cok Mutlu': '🐉', 'Halsiz': '🦄', 'Yorgun': '🐉', 'Uzgun': '🦄', 'default': '🐉' },
       'tavsan': { 'Cok Mutlu': '🦄', 'Halsiz': '🦄', 'Yorgun': '🦄', 'Uzgun': '🦄', 'default': '🦄' },
-      'ejderha': { 'Cok Mutlu': '🐉', 'Halsiz': '🦄', 'Yorgun': '🐉', 'Uzgun': '🐉', 'default': '🐉' }
+      'ejderha': { 'Cok Mutlu': '🦅', 'Halsiz': '🦅', 'Yorgun': '🦅', 'Uzgun': '🦅', 'default': '🦅' }
     }
   };
 
@@ -61,7 +60,7 @@ export const hayvanGorseliGetir = (tur: HayvanTuru, ruh: RuhHali, seviye: number
   const uygunSeviye = seviyeler.find(s => seviye >= s) || 1;
   const seviyeGorselleri = seviyeEmojileri[uygunSeviye];
   const turGorselleri = seviyeGorselleri[tur] || seviyeGorselleri['kedi'];
-  
+
   return turGorselleri[ruh] || turGorselleri.default;
 };
 
