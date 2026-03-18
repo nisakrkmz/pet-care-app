@@ -2,6 +2,11 @@
 
 Evcil hayvan bakım oyunu mobil uygulaması. Kediler, köpekler, tavşanlar ve kuşlar için interaktif bakım deneyimi.
 
+## 🔗 Demo ve APK
+
+- 🎥 [YouTube Demo](https://youtube.com/shorts/DYAF-TJheM8?si=YuPtwWexGjm7lbBx)
+- 📦 [APK Dosyası](https://expo.dev/artifacts/eas/ukczaJWhuez3UR6K67WEbL.apk)
+
 ## 📱 Özellikler
 
 - **🎮 Oyunlar**: Top Yakala, Hızlı Dokun, Hafıza Eşleştirme
